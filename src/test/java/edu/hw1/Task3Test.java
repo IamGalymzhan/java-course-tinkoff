@@ -9,7 +9,7 @@ public class Task3Test {
     @DisplayName("Normal true case")
     void trueCase() {
         int[] array1 = {1, 2, 3, 4};
-        int[] array2 = {4, 0};
+        int[] array2 = {6, 0};
         boolean expectedResult = true;
 
         boolean actualResult = Task3.isNestable(array1, array2);
