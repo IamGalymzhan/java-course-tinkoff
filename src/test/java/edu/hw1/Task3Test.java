@@ -3,13 +3,7 @@ package edu.hw1;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.*;
-/*
-Normal true case
-Normal false case
-first array is empty
-second array is empty
-both arrays are empty
- */
+
 public class Task3Test {
     @Test
     @DisplayName("Normal true case")
@@ -35,12 +29,5 @@ public class Task3Test {
         assertThat(actualResult).isEqualTo(expectedResult);
     }
 
-    @Test
-    @DisplayName("First array empty case")
-    void firstEmpty() {
-        int[] array1 = {};
-        int[] array2 = {3, 5};
 
-        
-    }
 }
