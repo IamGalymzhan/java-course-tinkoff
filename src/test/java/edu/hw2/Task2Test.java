@@ -2,6 +2,8 @@ package edu.hw2;
 
 import edu.hw2.Task2.Rectangle;
 import edu.hw2.Task2.Square;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -22,5 +24,14 @@ public class Task2Test {
         rect.setHeight(10);
 
         assertThat(rect.area()).isEqualTo(200.0);
+    }
+
+    @Test
+    @DisplayName("Set width for square")
+    void widthSquare() {
+        Rectangle rect = new Square();
+        rect.setWidth(10);
+
+        assertThat(rect.area()).isEqualTo(100.0);
     }
 }
