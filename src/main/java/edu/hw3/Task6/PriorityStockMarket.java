@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class PriorityStockMarket implements StockMarket{
+public class PriorityStockMarket implements StockMarket {
 
     private Queue queue = new PriorityQueue<Stock>(new Comparator<Stock>() {
         @Override
@@ -12,6 +12,7 @@ public class PriorityStockMarket implements StockMarket{
             return o2.getPrice() - o1.getPrice();
         }
     });
+
     @Override
     public void add(Stock stock) {
         queue.add(stock);
@@ -24,6 +25,6 @@ public class PriorityStockMarket implements StockMarket{
 
     @Override
     public Stock mostValuableStock() {
-        return (Stock)queue.peek();
+        return (Stock) queue.peek();
     }
 }

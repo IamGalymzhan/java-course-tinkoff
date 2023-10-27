@@ -12,6 +12,7 @@ public class BackwardIterator<T> implements Iterator {
         this.list = list;
         pointer = list.size();
     }
+
     @Override
     public boolean hasNext() {
         return pointer > 0;

@@ -16,7 +16,7 @@ public class Main {
             public int compare(Contact c1, Contact c2) {
                 String fullName1 = (c1.getLastName() != null ? c1.getLastName() + " " : "") + c1.getFirstName();
                 String fullName2 = (c2.getLastName() != null ? c2.getLastName() + " " : "") + c1.getLastName();
-                return (sorting == "ASC" ? fullName1.compareTo(fullName2) : -fullName1.compareTo(fullName2));
+                return (sorting.equals("ASC") ? fullName1.compareTo(fullName2) : -fullName1.compareTo(fullName2));
             }
         });
         return contacts;

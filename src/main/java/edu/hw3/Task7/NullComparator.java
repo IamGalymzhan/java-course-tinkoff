@@ -1,8 +1,6 @@
 package edu.hw3.Task7;
 
 import java.util.Comparator;
-import java.util.Map;
-import java.util.TreeMap;
 
 public class NullComparator implements Comparator {
 
