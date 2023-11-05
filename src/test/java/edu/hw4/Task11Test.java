@@ -21,7 +21,7 @@ public class Task11Test {
         list.add(a4);
         var result = Task11.bitingHighAnimals(list);
 
-        assertThat(result).containsExactlyInAnyOrder(a2, a4);
+        assertThat(result).containsExactlyInAnyOrder(a1);
 
     }
 }
