@@ -7,7 +7,7 @@ public class RendererTest {
     @Test
     @DisplayName("Maze")
     void test() {
-        Maze maze = new PrimGenerator().generate(16, 16);
+        Maze maze = new RecursiveBacktrackerGenerator().generate(16, 16);
         String mazeString = new ConsoleRenderer().render(maze);
         System.out.println(mazeString);
     }
