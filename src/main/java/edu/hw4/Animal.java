@@ -28,14 +28,14 @@ public record Animal(
     }
 
     @Override public String toString() {
-        return "Animal{" +
-            "name='" + name + '\'' +
-            ", type=" + type +
-            ", sex=" + sex +
-            ", age=" + age +
-            ", height=" + height +
-            ", weight=" + weight +
-            ", bites=" + bites +
-            '}';
+        return "Animal{"
+            + "name='" + name + '\''
+            + ", type=" + type
+            + ", sex=" + sex
+            + ", age=" + age
+            + ", height=" + height
+            + ", weight=" + weight
+            + ", bites=" + bites
+            + '}';
     }
 }

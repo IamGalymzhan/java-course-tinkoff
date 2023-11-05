@@ -21,26 +21,28 @@ public class ValidationError {
         if (animal.age() < 0) {
             errors.add(new ValidationError("age", "Age cannot be negative"));
         }
+        String weight = "weight";
         if (animal.weight() < 0) {
-            errors.add(new ValidationError("weight", "Weight cannot be negative"));
+            errors.add(new ValidationError(weight, "Weight cannot be negative"));
         }
         if (animal.weight() == 0) {
-            errors.add(new ValidationError("weight", "Weight cannot be zero"));
+            errors.add(new ValidationError(weight, "Weight cannot be zero"));
         }
+        String height = "height";
         if (animal.height() < 0) {
-            errors.add(new ValidationError("height", "Height cannot be negative"));
+            errors.add(new ValidationError(height, "Height cannot be negative"));
         }
         if (animal.height() == 0) {
-            errors.add(new ValidationError("height", "Height cannot be zero"));
+            errors.add(new ValidationError(height, "Height cannot be zero"));
         }
         return errors;
     }
 
     @Override public String toString() {
-        return "ValidationError{" +
-            "errorField='" + errorField + '\'' +
-            ", errorMessage='" + errorMessage + '\'' +
-            '}';
+        return "ValidationError{"
+            + "errorField='" + errorField + '\''
+            + ", errorMessage='" + errorMessage + '\''
+            + '}';
     }
 
     @Override
