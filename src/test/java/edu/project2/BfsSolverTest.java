@@ -18,7 +18,7 @@ public class BfsSolverTest {
         };
 
         Maze maze = CustomGenerator.createMaze(5, 6, mazeInput);
-        List<Coordinate> path = new DfsSolver().solve(maze,
+        List<Coordinate> path = new BfsSolver().solve(maze,
             new Coordinate(0, 0), new Coordinate(4, 5));
 
         assertThat(path).isNotNull();
@@ -38,7 +38,7 @@ public class BfsSolverTest {
         };
 
         Maze maze = CustomGenerator.createMaze(5, 6, mazeInput);
-        List<Coordinate> path = new DfsSolver().solve(maze,
+        List<Coordinate> path = new BfsSolver().solve(maze,
             new Coordinate(0, 0), new Coordinate(4, 5));
 
         assertThat(path).isNull();
@@ -56,7 +56,7 @@ public class BfsSolverTest {
         };
 
         Maze maze = CustomGenerator.createMaze(5, 6, mazeInput);
-        List<Coordinate> path = new DfsSolver().solve(maze,
+        List<Coordinate> path = new BfsSolver().solve(maze,
             new Coordinate(0, 0), new Coordinate(4, 5));
 
         assertThat(path).isNull();
@@ -74,7 +74,7 @@ public class BfsSolverTest {
         };
 
         Maze maze = CustomGenerator.createMaze(5, 6, mazeInput);
-        List<Coordinate> path = new DfsSolver().solve(maze,
+        List<Coordinate> path = new BfsSolver().solve(maze,
             new Coordinate(0, 0), new Coordinate(4, 5));
 
         assertThat(path).isNull();

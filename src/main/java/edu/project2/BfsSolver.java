@@ -64,21 +64,21 @@ public class BfsSolver implements Solver {
                 int nx = x + dx[k];
                 int ny = y + dy[k];
 
-                if (isInside(nx, ny) && visited[nx][ny] == 0) {
+                if (isInside(nx, ny) && visited[nx][ny] == 0 && grid[nx][ny].type() != Cell.Type.WALL) {
                     visited[nx][ny] = 1;
                     queue.add(new Coordinate(nx, ny));
                     parent[nx][ny] = new Coordinate(x, y);
                 }
             }
         }
-        return visited[endX][endY] == 0;
+        return visited[endX][endY] == 1;
     }
 
     private void getPath() {
         int x = endX;
         int y = endY;
         path.add(new Coordinate(x, y));
-        while (x != startX || y != endY) {
+        while (x != startX || y != startY) {
             Coordinate temp = parent[x][y];
             x = temp.row();
             y = temp.col();
