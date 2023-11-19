@@ -19,7 +19,7 @@ public class Task2Test {
     @BeforeEach
     void before() {
         try {
-            Files.createFile(path.resolve(fileName));
+            Files.createDirectories(path.resolve(fileName));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -39,6 +39,7 @@ public class Task2Test {
             Files.delete(path.resolve(fileName));
             Files.delete(path.resolve(fileNameCopy));
             Files.delete(path.resolve(fileNameCopy2));
+            Files.delete(path);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

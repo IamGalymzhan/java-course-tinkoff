@@ -15,6 +15,11 @@ public class Task4Test {
     private String fileName = "quote.txt";
     @Test
     void test() {
+        try {
+            Files.createDirectories(path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         CompositionWriter.writeWithComposition(path.resolve(fileName));
         assertThat(Files.exists(path.resolve(fileName))).isTrue();
         try {
@@ -29,6 +34,7 @@ public class Task4Test {
     void after() {
         try {
             Files.delete(path.resolve(fileName));
+            Files.delete(path);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

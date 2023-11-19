@@ -178,6 +178,7 @@ public class DiskMap implements Map<String, String>, AutoCloseable {
         clear();
         try {
             Files.delete(path);
+            Files.delete(path.getParent());
         } catch (Exception e) {
 
         }
