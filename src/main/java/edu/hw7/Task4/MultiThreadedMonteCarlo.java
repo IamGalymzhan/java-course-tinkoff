@@ -6,7 +6,10 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class MultiThreadedMonteCarlo {
-    private static double R = 1;
+    public static final int FOUR = 4;
+
+    private MultiThreadedMonteCarlo() {
+    }
 
     public static double countPi(int iterations, int threads) {
         AtomicInteger circleCount = new AtomicInteger();
@@ -15,9 +18,9 @@ public class MultiThreadedMonteCarlo {
             int threadIterations = (j + 1 != threads ? iterations / threads : iterations - j * (iterations / threads));
             threadList.add(new Thread(() -> {
                 for (int i = 0; i < threadIterations; i++) {
-                    double x = ThreadLocalRandom.current().nextDouble(-R, R);
-                    double y = ThreadLocalRandom.current().nextDouble(-R, R);
-                    if ((x * x + y * y) <= R * R) {
+                    double x = ThreadLocalRandom.current().nextDouble(-1, 1);
+                    double y = ThreadLocalRandom.current().nextDouble(-1, 1);
+                    if ((x * x + y * y) <= 1) {
                         circleCount.getAndIncrement();
                     }
                 }
@@ -33,7 +36,7 @@ public class MultiThreadedMonteCarlo {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        double pi = 4 * (double) circleCount.get() / iterations;
+        double pi = FOUR * (double) circleCount.get() / iterations;
         return pi;
     }
 

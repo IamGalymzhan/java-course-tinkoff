@@ -12,6 +12,7 @@ public class Incrementer {
     public int getCounter() {
         return counter.get();
     }
+
     public void addition(int value) {
         Thread thread1 = new Thread(() -> {
             for (int i = 0; i < value / 2; i++) {
