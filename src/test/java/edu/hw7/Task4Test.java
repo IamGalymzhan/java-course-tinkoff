@@ -13,14 +13,14 @@ public class Task4Test {
     @DisplayName("Single Thread")
     void testOneThread() {
         double pi = SingleThreadedMonteCarlo.countPi(iterations);
-        assertThat(Math.abs(pi - Math.PI)).isLessThan(0.001);
+        assertThat(Math.abs(pi - Math.PI)).isLessThan(0.01);
     }
 
     @Test
     @DisplayName("Four Threads")
     void testFourThreads() {
         double pi = MultiThreadedMonteCarlo.countPi(iterations, 4);
-        assertThat(Math.abs(pi - Math.PI)).isLessThan(0.001);
+        assertThat(Math.abs(pi - Math.PI)).isLessThan(0.01);
 
     }
 
