@@ -11,6 +11,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class DefaultRenderer extends AbstractRenderer {
     private AffineCoefficients[] affineCoefficientsArray;
+
     @Override
     public FractalImage render(
         FractalImage canvas,
@@ -27,8 +28,8 @@ public class DefaultRenderer extends AbstractRenderer {
         for (int num = 0; num < samples; ++num) {
             Point pw = world.randomPoint();
             for (int step = START; step < iterPerSample; ++step) {
-                int AffineCoefficientsIndex = ThreadLocalRandom.current().nextInt(samples);
-                AffineCoefficients affineCoefficients = affineCoefficientsArray[AffineCoefficientsIndex];
+                int affineCoefficientsIndex = ThreadLocalRandom.current().nextInt(samples);
+                AffineCoefficients affineCoefficients = affineCoefficientsArray[affineCoefficientsIndex];
                 pw = applyAffineCoefficients(pw, affineCoefficients);
 
                 int variationIndex = ThreadLocalRandom.current().nextInt(variations.size());
