@@ -18,7 +18,7 @@ public class ParallelDfsSolverTest {
         };
 
         Maze maze = CustomGenerator.createMaze(5, 6, mazeInput);
-        List<Coordinate> path = new DfsSolver().solve(maze,
+        List<Coordinate> path = new ParallelDfsSolver().solve(maze,
             new Coordinate(0, 0), new Coordinate(4, 5)
         );
 
@@ -39,7 +39,7 @@ public class ParallelDfsSolverTest {
         };
 
         Maze maze = CustomGenerator.createMaze(5, 6, mazeInput);
-        List<Coordinate> path = new DfsSolver().solve(maze,
+        List<Coordinate> path = new ParallelDfsSolver().solve(maze,
             new Coordinate(0, 0), new Coordinate(4, 5)
         );
 
@@ -58,7 +58,7 @@ public class ParallelDfsSolverTest {
         };
 
         Maze maze = CustomGenerator.createMaze(5, 6, mazeInput);
-        List<Coordinate> path = new DfsSolver().solve(maze,
+        List<Coordinate> path = new ParallelDfsSolver().solve(maze,
             new Coordinate(0, 0), new Coordinate(4, 5)
         );
 
@@ -77,7 +77,7 @@ public class ParallelDfsSolverTest {
         };
 
         Maze maze = CustomGenerator.createMaze(5, 6, mazeInput);
-        List<Coordinate> path = new DfsSolver().solve(maze,
+        List<Coordinate> path = new ParallelDfsSolver().solve(maze,
             new Coordinate(0, 0), new Coordinate(4, 5)
         );
 
