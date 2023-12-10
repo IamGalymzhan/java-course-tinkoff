@@ -27,7 +27,7 @@ public class FilterFiles extends RecursiveTask<List<String>> {
             for (Path curPath : paths) {
                 if (Files.isRegularFile(curPath)) {
                     if (predicate.test(curPath)) {
-                        result.add(path.toString());
+                        result.add(curPath.toString());
                     }
                 } else if (Files.isDirectory(curPath)) {
                     FilterFiles task = new FilterFiles(curPath, predicate);
