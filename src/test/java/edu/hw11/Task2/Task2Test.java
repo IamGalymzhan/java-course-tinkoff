@@ -24,13 +24,18 @@ public class Task2Test {
 
         ByteBuddyAgent.install();
         new ByteBuddy()
-            .redefine(ArithmeticUtils.class)
-            .method(named("sum"))
-            .intercept(MethodDelegation.to(Target.class))
+            .redefine(ArithUtils.class)
+            .method(named("sum")
+                .and(returns(int.class))
+                .and(isDeclaredBy(ArithUtils.class)))
+            .intercept(MethodDelegation.to(ChangedArithUtils.class))
             .make()
-            .load(ClassLoader.getSystemClassLoader(), ClassReloadingStrategy.fromInstalledAgent())
+            .load(ArithUtils.class.getClassLoader(),
+                ClassReloadingStrategy.fromInstalledAgent())
             .getLoaded();
 
-        assertThat(ArithmeticUtils.sum(4, 3)).isEqualTo(12);
+        ArithUtils arithmeticUtils = new ArithUtils();
+
+        assertThat(arithmeticUtils.sum(4, 3)).isEqualTo(12);
     }
 }
