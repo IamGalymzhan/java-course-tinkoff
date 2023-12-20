@@ -15,7 +15,6 @@ public class Task2Test {
     void test1() throws Exception {
         ThreadPool threadPool = FixedThreadPool.create(4);
         List<Integer> actualResults = new CopyOnWriteArrayList<>();
-        List<Integer> expectedResults = List.of(1, 1, 2, 3, 5, 8, 13, 21, 34, 55);
 
         for (int i = 1; i <= 10; i++) {
             int finalI = i;
@@ -23,6 +22,6 @@ public class Task2Test {
         }
         threadPool.close();
 
-        assertThat(actualResults).containsExactlyInAnyOrderElementsOf(expectedResults);
+        assertThat(actualResults).containsExactlyInAnyOrder(1, 1, 2, 3, 5, 8, 13, 21, 34, 55);
     }
 }
