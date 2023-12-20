@@ -34,18 +34,25 @@ public class Task2Test {
     @Test
     @DisplayName("Test file counter")
     void test1() {
+        List<String> expectedResult = List.of(path.toString());
+
         List<String> actualResult = DirectoryProcessor.directoriesWithMoreThanNumberFiles(path, 4);
-        assertThat(actualResult).containsExactlyInAnyOrderElementsOf(List.of(path.toString()));
+
+        assertThat(actualResult).containsExactlyInAnyOrderElementsOf(expectedResult);
     }
 
     @Test
     @DisplayName("Test file filter")
     void test2() {
+        List<String> expectedResult = List.of(
+            path.resolve("File.txt").toString(),
+            path.resolve("text.txt").toString()
+        );
+
         List<String> actualResult = DirectoryProcessor.filesByPredicate(path,
             p -> p.toString().endsWith(".txt"));
-        assertThat(actualResult).containsExactlyInAnyOrderElementsOf(
-            List.of(path.resolve("File.txt").toString(), path.resolve("text.txt").toString())
-        );
+
+        assertThat(actualResult).containsExactlyInAnyOrderElementsOf(expectedResult);
     }
 
     @AfterEach

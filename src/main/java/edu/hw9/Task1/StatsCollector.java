@@ -10,8 +10,8 @@ import java.util.concurrent.Executors;
 public class StatsCollector {
 
     private static final int THREADS = 4;
-    ExecutorService executorService;
-    Queue<Metric> queue = new ConcurrentLinkedDeque<>();
+    private ExecutorService executorService;
+    private Queue<Metric> queue = new ConcurrentLinkedDeque<>();
 
     public StatsCollector() {
         executorService = Executors.newFixedThreadPool(THREADS);
