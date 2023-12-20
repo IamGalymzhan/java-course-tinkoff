@@ -10,7 +10,9 @@ public class Task1Test {
     @DisplayName("Check correct value")
     void test() {
         Incrementer incrementer = new Incrementer();
+
         incrementer.addition(1000);
+
         assertThat(incrementer.getCounter()).isEqualTo(1000);
     }
 }

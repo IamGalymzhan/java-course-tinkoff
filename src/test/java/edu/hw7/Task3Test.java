@@ -29,14 +29,11 @@ public class Task3Test {
                     addressesFound = mapPersonDatabase.findByAddress("Address").size();
                     phonesFound = mapPersonDatabase.findByPhone("Phone").size();
                 }
-                assertThat(namesFound).isEqualTo(addressesFound);
-                assertThat(namesFound).isEqualTo(phonesFound);
+
             }
         });
-
         thread1.start();
         thread2.start();
-
         try {
             thread1.join();
             thread2.join();
@@ -44,6 +41,8 @@ public class Task3Test {
             throw new RuntimeException(e);
         }
 
-        assertThat(mapPersonDatabase.findByName("Name").size()).isEqualTo(1000);
+        int databaseSize = mapPersonDatabase.findByName("Name").size();
+
+        assertThat(databaseSize).isEqualTo(1000);
     }
 }

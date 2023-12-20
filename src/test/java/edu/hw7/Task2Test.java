@@ -9,7 +9,9 @@ public class Task2Test {
     @Test
     @DisplayName("Common case")
     void test() {
+
         int fact = Factorial.fact(6);
+
         assertThat(fact).isEqualTo(720);
     }
 }
