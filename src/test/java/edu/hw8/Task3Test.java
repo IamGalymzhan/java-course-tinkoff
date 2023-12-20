@@ -17,7 +17,9 @@ public class Task3Test {
             OneThreadHack.hash("pass"), "alex",
             OneThreadHack.hash("o1o1s"), "steve"
         );
+
         Map<String, String> result = hack.hack(hashUser);
+
         assertThat(result).containsAllEntriesOf(Map.of(
             "pass", "alex",
             "o1o1s", "steve"
@@ -32,7 +34,9 @@ public class Task3Test {
             MultiThreadHack.hash("pass"), "alex",
             MultiThreadHack.hash("o1o1s"), "steve"
         );
+
         Map<String, String> result = hack.hack(hashUser);
+
         assertThat(result).containsAllEntriesOf(Map.of(
             "pass", "alex",
             "o1o1s", "steve"

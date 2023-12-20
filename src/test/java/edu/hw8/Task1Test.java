@@ -12,7 +12,10 @@ public class Task1Test {
     void test() throws InterruptedException {
         startServer("localhost", 18080);
         Client client = new Client("localhost", 18080);
-        assertThat(client.sendRequest("интеллект")).isEqualTo("Чем ниже интеллект, тем громче оскорбления");
+
+        String response = client.sendRequest("интеллект");
+
+        assertThat(response).isEqualTo("Чем ниже интеллект, тем громче оскорбления");
     }
 
     void startServer(String host, int port) throws InterruptedException {

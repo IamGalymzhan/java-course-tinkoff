@@ -15,11 +15,11 @@ public class MultiThreadHack implements Hack {
     private static final int MIN_LENGTH = 4;
     private static final int MAX_LENGTH = 5;
     private static final int THREADS = 4;
+    private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz0123456789";
+    private static final int ALPH_SIZE = 36;
     private ExecutorService executor = Executors.newFixedThreadPool(THREADS);
     private AtomicBoolean isHacking = new AtomicBoolean(false);
     private Map<String, String> passToUser;
-    private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz0123456789";
-    private static final int ALPH_SIZE = 36;
     private Lock lock = new ReentrantLock();
     private CountDownLatch latch;
     private int key = 0;
