@@ -21,6 +21,7 @@ public class Task2Test {
             threadPool.execute(() -> actualResults.add(Fibonacci.calculate(finalI)));
         }
         threadPool.close();
+        Thread.sleep(1000);
         assertThat(actualResults).containsExactlyInAnyOrderElementsOf(expectedResults);
     }
 }
