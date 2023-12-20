@@ -5,7 +5,6 @@ import edu.hw8.Task2.FixedThreadPool;
 import edu.hw8.Task2.ThreadPool;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import static org.assertj.core.api.Assertions.assertThat;
