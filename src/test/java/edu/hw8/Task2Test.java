@@ -15,13 +15,12 @@ public class Task2Test {
     void test1() throws Exception {
         ThreadPool threadPool = FixedThreadPool.create(4);
         List<Integer> actualResults = new CopyOnWriteArrayList<>();
-
+        List<Integer> expectedResults = List.of(1, 1, 2, 3, 5, 8, 13, 21, 34, 55);
         for (int i = 1; i <= 10; i++) {
             int finalI = i;
             threadPool.execute(() -> actualResults.add(Fibonacci.calculate(finalI)));
         }
         threadPool.close();
-
-        assertThat(actualResults).containsExactlyInAnyOrder(1, 1, 2, 3, 5, 8, 13, 21, 34, 55);
+        assertThat(actualResults).containsExactlyInAnyOrderElementsOf(expectedResults);
     }
 }
