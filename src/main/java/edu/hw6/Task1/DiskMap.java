@@ -24,10 +24,7 @@ public class DiskMap implements Map<String, String>, AutoCloseable {
     private String readValue(Path path) {
         try (BufferedReader reader = Files.newBufferedReader(path, Charset.defaultCharset())) {
             String value = reader.readLine();
-            if (value != null) {
-                return value;
-            }
-            return null;
+            return value;
         } catch (Exception e) {
             return null;
         }
